@@ -1,5 +1,4 @@
 import './App.css';
-import TodoRowItem from './components/TodoRowItem';
 import TodoTable from './components/TodoTable';
 
 function App() {
@@ -7,7 +6,8 @@ function App() {
   const todos = [
     {rowNumber: 1, rowDescription: 'Feed puppy', rowAssigned: 'User One'},
     {rowNumber: 2, rowDescription: 'Water plants', rowAssigned: 'User Two'},
-    {rowNumber: 3, rowDescription: 'Make Dinner', rowAssigned: 'User One'}
+    {rowNumber: 3, rowDescription: 'Make Dinner', rowAssigned: 'User One'},
+    {rowNumber: 4, rowDescription: 'Charge Phone Battery', rowAssigned: 'User One'}
   ];
 
   return (
