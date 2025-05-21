@@ -1,14 +1,16 @@
+import React, {useState} from 'react';  
 import './App.css';
 import TodoTable from './components/TodoTable';
 
 function App() {
 
-  const todos = [
+  const [todos, setTodos] = useState([
     {rowNumber: 1, rowDescription: 'Feed puppy', rowAssigned: 'User One'},
     {rowNumber: 2, rowDescription: 'Water plants', rowAssigned: 'User Two'},
     {rowNumber: 3, rowDescription: 'Make Dinner', rowAssigned: 'User One'},
     {rowNumber: 4, rowDescription: 'Charge Phone Battery', rowAssigned: 'User One'}
-  ];
+  ]
+  );
 
   const addTodo = () => {
     //console.log('Our addTodo btn has been clicked');  
@@ -18,8 +20,9 @@ function App() {
         rowDescription: 'New Todo',
         rowAssigned: 'User Three'
       };
-      todos.push(newTodo);
-      console.log(todos);
+      //todos.push(newTodo);
+      setTodos(todos => [...todos, newTodo]);
+      //console.log(todos);
     }
   }
 
