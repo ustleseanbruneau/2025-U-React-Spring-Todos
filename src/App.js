@@ -14,17 +14,22 @@ function App() {
   );
 
   const addTodo = (description, assigned) => {
+    let rowNumber = 0;
+
     //console.log('Our addTodo btn has been clicked');  
     if (todos.length > 0) {
-      const newTodo = {
-        rowNumber: todos.length + 1,
-        rowDescription: description,
-        rowAssigned: assigned
-      };
-      //todos.push(newTodo);
-      setTodos(todos => [...todos, newTodo]);
-      //console.log(todos);
+      rowNumber = todos[todos.length - 1].rowNumber + 1;
+    } else {
+      rowNumber = 1;
     }
+    const newTodo = {
+      rowNumber: rowNumber,
+      rowDescription: description,
+      rowAssigned: assigned
+    };
+    //todos.push(newTodo);
+    setTodos(todos => [...todos, newTodo]);
+    //console.log(todos);
   }
 
   return (
